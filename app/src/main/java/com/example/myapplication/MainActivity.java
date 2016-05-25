@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+        btn = (Button) findViewById(R.id.myButton);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), Main2Activity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
